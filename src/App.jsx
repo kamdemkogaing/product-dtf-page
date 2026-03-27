@@ -109,13 +109,12 @@ function AccordionItem({ title }) {
 function PdfCard({ label }) {
   return (
     <div className="flex cursor-pointer flex-col items-center gap-2">
-      <div className="flex h-[48px] w-[48px] items-center justify-center rounded-[10px] border border-[#ff6158] bg-white">
-        <img
-          src="/assets/pdf-icon.png"
-          alt="PDF"
-          className="h-[36px] w-[36px] object-contain"
-        />
-      </div>
+      <img
+        src="https://shop.printequipment.de/media/32/7b/ac/1724168609/PDF.png"
+        alt="PDF"
+        className="h-[36px] w-[36px] object-contain"
+      />
+
       <span className="text-center text-[12px] text-[#333]">{label}</span>
     </div>
   );
@@ -139,9 +138,9 @@ function CompareRowValue({ children }) {
 
 export default function App() {
   return (
-    <div className="min-h-screen  text-[#111]">
+    <div className="min-h-screen  text-[#111] bg-[#f3f3f3]">
       <div className="mx-auto w-full max-w-[1280px]">
-        <section className="grid grid-cols-[70px_640px_1fr] gap-0 px-[34px] pb-[26px] pt-[46px]">
+        <section className="grid grid-cols-[70px_520px_1fr] gap-0 px-[34px] pb-[26px] pt-[46px]">
           <div className="flex flex-col items-center pt-[8px]">
             <button type="button" className="text-[#b9b9b9]">
               <ChevronUp size={16} strokeWidth={1.5} />
@@ -241,7 +240,7 @@ export default function App() {
         </section>
 
         <section className="grid grid-cols-2 gap-4 border-t border-[#dfdfdf] px-[5px] pt-4">
-          <div className="min-h-[400px] bg-[#f3f3f3] px-[20px] pb-8 pt-[22px]">
+          <div className="min-h-[400px] bg-[white] px-[20px] pb-8 pt-[22px]">
             <h2 className="text-[17px] font-bold uppercase tracking-[0.01em] text-black">
               PRODUKTINFORMATIONEN
             </h2>
@@ -317,7 +316,7 @@ export default function App() {
             </div>
           </div>
 
-          <div className="min-h-[400px] bg-[#f3f3f3] px-[20px] pb-8 pt-[22px]">
+          <div className="min-h-[400px] bg-[white] px-[20px] pb-8 pt-[22px]">
             <h2 className="text-[17px] font-bold uppercase tracking-[0.01em] text-black">
               EIGENSCHAFTEN
             </h2>
@@ -337,7 +336,7 @@ export default function App() {
         </section>
 
         <section className="mt-4 grid grid-cols-2 gap-4 px-[5px]">
-          <div className="bg-[#f3f3f3] px-[20px] pb-6 pt-[28px]">
+          <div className="bg-[white] px-[20px] pb-6 pt-[28px]">
             <h2 className="text-[17px] font-bold uppercase text-black">
               WEITERFÜHRENDE INFORMATIONEN
             </h2>
@@ -349,7 +348,7 @@ export default function App() {
             </div>
           </div>
 
-          <div className="bg-[#f3f3f3] px-[20px] pb-6 pt-[28px]">
+          <div className="bg-[white] px-[20px] pb-6 pt-[28px]">
             <h2 className="text-[17px] font-bold uppercase text-black">
               DONWLOAD
             </h2>
@@ -363,7 +362,7 @@ export default function App() {
           </div>
         </section>
 
-        <section className="mt-6 bg-[#f3f3f3] px-[18px] pb-8 pt-[18px] mb-[7.5rem]">
+        <section className="mt-6 bg-[white] px-[18px] pb-8 pt-[18px] mb-[7.5rem]">
           <div className="grid grid-cols-[240px_1fr_1fr_1fr]">
             <div></div>
 
