@@ -87,7 +87,7 @@ function AccordionItem({ title }) {
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between px-4 py-[10px] text-left text-[13px] text-[#444]"
+        className="flex w-full items-center justify-between px-4 py-[10px] text-left text-[15px] text-[#444]"
       >
         <span>{title}</span>
         {open ? (
@@ -98,7 +98,7 @@ function AccordionItem({ title }) {
       </button>
 
       {open && (
-        <div className="px-4 pb-4 text-[12px] text-[#666]">
+        <div className="px-4 pb-4 text-[15px] text-[#666]">
           Inhalt wie im Screenshot nicht geöffnet dargestellt.
         </div>
       )}
@@ -108,7 +108,7 @@ function AccordionItem({ title }) {
 
 function PdfCard({ label }) {
   return (
-    <div className="flex flex-col items-center gap-2 cursor-pointer">
+    <div className="flex cursor-pointer flex-col items-center gap-2">
       <div className="flex h-[48px] w-[48px] items-center justify-center rounded-[10px] border border-[#ff6158] bg-white">
         <img
           src="/assets/pdf-icon.png"
@@ -123,7 +123,7 @@ function PdfCard({ label }) {
 
 function CompareRowLabel({ children }) {
   return (
-    <div className="whitespace-pre-line px-5 py-6 text-center text-[13px] font-bold leading-[1.45] text-[#222]">
+    <div className="whitespace-pre-line px-5 py-6 text-center text-[15px] font-bold leading-[1.45] text-[#222]">
       {children}
     </div>
   );
@@ -131,7 +131,7 @@ function CompareRowLabel({ children }) {
 
 function CompareRowValue({ children }) {
   return (
-    <div className="whitespace-pre-line px-5 py-6 text-center text-[13px] leading-[1.45] text-[#222]">
+    <div className="whitespace-pre-line px-5 py-6 text-center text-[15px] leading-[1.45] text-[#222]">
       {children}
     </div>
   );
@@ -139,97 +139,100 @@ function CompareRowValue({ children }) {
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#ececec] text-[#111]">
-      <div className="mx-auto w-full max-w-[1350px] bg-[#ececec]">
-        <section className="grid grid-cols-[56px_1fr_360px] gap-6 px-[42px] pb-10 pt-[36px]">
-          <div className="flex flex-col items-center pt-2">
-            <button type="button" className="text-[#b5b5b5]">
+    <div className="min-h-screen  text-[#111]">
+      <div className="mx-auto w-full max-w-[1280px]">
+        <section className="grid grid-cols-[70px_640px_1fr] gap-0 px-[34px] pb-[26px] pt-[46px]">
+          <div className="flex flex-col items-center pt-[8px]">
+            <button type="button" className="text-[#b9b9b9]">
               <ChevronUp size={16} strokeWidth={1.5} />
             </button>
 
-            <div className="mt-1 flex h-[34px] w-[34px] items-center justify-center border border-[#d8d8d8] bg-[#f8f8f8] p-1">
+            <div className="mt-[4px] flex h-[47px] w-[54px] items-center justify-center border border-[#bfc3c7] bg-[#f7f7f7] p-[4px]">
               <img
-                src="/assets/thumb-1.png"
+                src="https://shop.printequipment.de/media/2a/dc/2e/1755782017/dtf-xp-start-600-web-01.webp"
                 alt="Produkt Thumbnail"
                 className="max-h-full max-w-full object-contain"
               />
             </div>
 
-            <button type="button" className="mt-1 text-[#b5b5b5]">
+            <button type="button" className="mt-[4px] text-[#b9b9b9]">
               <ChevronDown size={16} strokeWidth={1.5} />
             </button>
           </div>
 
-          <div className="flex flex-col items-center justify-start pt-8">
-            <div className="relative w-full">
+          <div className="flex flex-col items-center">
+            <div className="flex h-[405px] w-full items-center justify-center">
               <img
                 src="https://shop.printequipment.de/media/2a/dc/2e/1755782017/dtf-xp-start-600-web-01.webp"
                 alt="DTF Drucksystem XP600-Pro"
-                className="mx-auto mt-6 h-auto w-[600px] object-contain"
+                className="ml-[-6px] mt-[8px] w-[470px] object-contain"
               />
             </div>
 
-            <div className="mt-6 flex items-center gap-[10px]">
-              <button type="button" className="text-[#c7c7c7]">
-                <ChevronLeft size={16} strokeWidth={1.5} />
+            <div className="mt-[18px] flex items-center justify-center gap-[11px]">
+              <button type="button" className="text-[#d3d3d3]">
+                <ChevronLeft size={14} strokeWidth={1.5} />
               </button>
 
               {carouselDots.map((dot, index) => (
                 <span
                   key={dot}
-                  className={`block h-[8px] w-[8px] rounded-full border border-[#8c8c8c] ${
-                    index === 0 ? "bg-black" : "bg-white"
+                  className={`block h-[10px] w-[10px] rounded-full border border-[#707070] ${
+                    index === 0 ? "bg-black" : "bg-transparent"
                   }`}
                 />
               ))}
 
-              <button type="button" className="text-[#c7c7c7]">
-                <ChevronRight size={16} strokeWidth={1.5} />
+              <button type="button" className="text-[#d3d3d3]">
+                <ChevronRight size={14} strokeWidth={1.5} />
               </button>
             </div>
           </div>
 
-          <div>
-            <h1 className="max-w-[360px] text-[18px] font-bold leading-[1.15] text-black">
+          <div className="pl-[48px] pt-[4px]">
+            <h1 className="max-w-[490px] text-[28px] font-bold leading-[1.12] text-black">
               DTF Drucksystem XP600-Pro, Drucker und Fixiereinheit (600 mm)
             </h1>
 
-            <p className="mt-6 text-[13px] text-[#555]">
+            <p className="mt-[18px] text-[18px] leading-none text-[#555]">
               Drucker und Fixiereinheit (600 mm)
             </p>
 
-            <div className="mt-8 flex flex-col gap-4">
+            <div className="mt-[34px] flex flex-col gap-[10px]">
               <button
                 type="button"
-                className="h-[34px] w-[188px] rounded-full bg-black text-[12px] font-bold uppercase tracking-[0.02em] text-white"
+                className="flex h-[35px] w-[300px] items-center justify-center rounded-full bg-black text-[15px] font-bold uppercase leading-none text-white"
               >
                 PREIS ANFRAGEN
               </button>
 
               <button
                 type="button"
-                className="h-[34px] w-[220px] rounded-full bg-black text-[12px] font-bold uppercase tracking-[0.02em] text-white"
+                className="flex h-[35px] w-[300px] items-center justify-center rounded-full bg-black text-[15px] font-bold uppercase leading-none text-white"
               >
                 JETZT BERATUNG ANFORDERN
               </button>
             </div>
 
-            <div className="mt-10 text-[13px] leading-[1.55] text-[#222]">
-              <p className="font-bold uppercase">
-                ART-NR: <span className="font-normal">DTF-XP-START-600</span>
+            <div className="mt-[30px] text-[13px] leading-[1.38] text-[#222]">
+              <p className="text-[15px]">
+                <span className="font-bold uppercase">ART-NR:</span>{" "}
+                <span className="font-normal">DTF-XP-START-600</span>
               </p>
 
-              <ul className="mt-6 space-y-[8px]">
+              <ul className="mt-[18px] space-y-[8px]">
                 {bullets.map((item) => (
-                  <li key={item} className="flex items-start gap-2">
+                  <li key={item} className="flex items-start gap-[6px]">
                     <CircleCheck
                       className="mt-[2px] shrink-0 text-black"
-                      size={14}
+                      size={15}
                       fill="black"
                       stroke="white"
-                      strokeWidth={1.8}
+                      strokeWidth={2}
                     />
-                    <span>{item}</span>
+                    <span className="whitespace-nowrap text-[15px] leading-[1.15]">
+                      {item}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -239,11 +242,11 @@ export default function App() {
 
         <section className="grid grid-cols-2 gap-4 border-t border-[#dfdfdf] px-[5px] pt-4">
           <div className="min-h-[400px] bg-[#f3f3f3] px-[20px] pb-8 pt-[22px]">
-            <h2 className="text-[14px] font-bold uppercase tracking-[0.01em] text-black">
+            <h2 className="text-[17px] font-bold uppercase tracking-[0.01em] text-black">
               PRODUKTINFORMATIONEN
             </h2>
 
-            <div className="mt-6 space-y-4 text-[12px] leading-[1.42] text-[#2d2d2d]">
+            <div className="mt-6 space-y-4 text-[15px] leading-[1.42] text-[#2d2d2d]">
               <p>
                 Das DTF-Systembundle XP600-PRO kombiniert modernste Drucktechnik
                 mit einer effizienten Fixierein-
@@ -315,7 +318,7 @@ export default function App() {
           </div>
 
           <div className="min-h-[400px] bg-[#f3f3f3] px-[20px] pb-8 pt-[22px]">
-            <h2 className="text-[14px] font-bold uppercase tracking-[0.01em] text-black">
+            <h2 className="text-[17px] font-bold uppercase tracking-[0.01em] text-black">
               EIGENSCHAFTEN
             </h2>
 
@@ -323,7 +326,7 @@ export default function App() {
               {features.map(([label, value]) => (
                 <div
                   key={label}
-                  className="grid grid-cols-[148px_1fr] bg-[#f7f7f7] px-[8px] py-[8px] text-[12px] leading-[1.35]"
+                  className="grid grid-cols-[225px_1fr] bg-[#f7f7f7] px-[8px] py-[8px] text-[15px] leading-[1.35]"
                 >
                   <div className="font-bold text-[#222]">{label}</div>
                   <div className="text-[#555]">{value}</div>
@@ -335,7 +338,7 @@ export default function App() {
 
         <section className="mt-4 grid grid-cols-2 gap-4 px-[5px]">
           <div className="bg-[#f3f3f3] px-[20px] pb-6 pt-[28px]">
-            <h2 className="text-[14px] font-bold uppercase text-black">
+            <h2 className="text-[17px] font-bold uppercase text-black">
               WEITERFÜHRENDE INFORMATIONEN
             </h2>
 
@@ -347,7 +350,7 @@ export default function App() {
           </div>
 
           <div className="bg-[#f3f3f3] px-[20px] pb-6 pt-[28px]">
-            <h2 className="text-[14px] font-bold uppercase text-black">
+            <h2 className="text-[17px] font-bold uppercase text-black">
               DONWLOAD
             </h2>
 
@@ -360,7 +363,7 @@ export default function App() {
           </div>
         </section>
 
-        <section className="mt-6 bg-[#f3f3f3] px-[18px] pb-8 pt-[18px]">
+        <section className="mt-6 bg-[#f3f3f3] px-[18px] pb-8 pt-[18px] mb-[7.5rem]">
           <div className="grid grid-cols-[240px_1fr_1fr_1fr]">
             <div></div>
 
@@ -371,7 +374,7 @@ export default function App() {
                   alt={column.title}
                   className="mx-auto h-[100px] object-contain"
                 />
-                <p className="mt-2 text-[12px] font-bold leading-[1.3] text-[#111]">
+                <p className="mt-2 text-[15px] font-bold leading-[1.3] text-[#111]">
                   {column.title}
                 </p>
               </div>
@@ -411,7 +414,7 @@ export default function App() {
               <CompareRowValue>{compareColumns[2].speed}</CompareRowValue>
             </div>
 
-            <div className="grid grid-cols-[240px_1fr_1fr_1fr] bg-[#f9f9f9]">
+            <div className="grid grid-cols-[241px_1fr_1fr_1fr] bg-[#f9f9f9]">
               <CompareRowLabel>
                 Empfohlenes{"\n"}Mindest-Produktionsvolumen
               </CompareRowLabel>
@@ -431,7 +434,7 @@ export default function App() {
               >
                 <button
                   type="button"
-                  className="h-[34px] w-[170px] rounded-full bg-black text-[12px] font-bold uppercase text-white"
+                  className="h-[34px] w-[170px] rounded-full bg-black text-[15px] font-bold uppercase text-white"
                 >
                   {column.button}
                 </button>
