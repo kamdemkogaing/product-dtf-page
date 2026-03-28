@@ -77,6 +77,38 @@ const compareColumns = [
   },
 ];
 
+const accessories = [
+  {
+    title: "Kodacolor DTF / PTF Tinte, versch. Farben, 1.000-g-Flasche",
+    image:
+      "https://shop.printequipment.de/media/94/3b/ca/1726585008/0192007c64b372ac991b548f2b87b9421252fe252f8252f7252f1e8786f95730c89e1329a33ac0a4f02e0ce9c150-dtf-ink-kd-10-.webp",
+    badge: null,
+    icon: "",
+  },
+  {
+    title: "DTF Tinte DuPont™ P1600 Series, div. Farben, 1-ltr.-Flasche",
+    image:
+      "https://shop.printequipment.de/media/90/98/d5/1755782883/dtf-ink-du-10-web-01-logo.webp",
+    badge: null,
+    icon: "",
+  },
+  {
+    title:
+      "DTF Transferfolie PE Brand Hot Peel / Double Coated Matt, div. Ausführungen",
+    image:
+      "https://shop.printequipment.de/media/ab/c2/cf/1760688388/DTF-FOIL-XCC-60_web_01 (1).jpg?width=2400",
+    badge: "SALE",
+    icon: "",
+  },
+  {
+    title: "DTF Puder PE Diamond Grade, div. Ausführungen",
+    image:
+      "https://shop.printequipment.de/media/43/5a/7a/1726584904/0192007ace9771eab8804925cb5d608b6252F5252Ff252Fd252F65fd3ab3763f5e8e4412ffd2952c5d13f7be6392_DTF_ADH_PE.jpg?width=2400",
+    badge: null,
+    icon: "",
+  },
+];
+
 const carouselDots = [0, 1, 2, 3, 4];
 
 function AccordionItem({ title }) {
@@ -120,6 +152,38 @@ function PdfCard({ label }) {
   );
 }
 
+function AccessoryCard({ item }) {
+  return (
+    <div className="relative flex min-h-[210px] flex-col rounded-[14px] border border-[#efefef] bg-white px-[18px] pb-[16px] pt-[18px] cursor-pointer">
+      {item.badge && (
+        <div className="absolute left-[16px] top-[16px] flex h-[42px] w-[42px] items-center justify-center rounded-full bg-[#ff7a1a] text-[8px] font-bold uppercase text-white">
+          % SALE
+        </div>
+      )}
+
+      {item.icon && (
+        <img
+          src={item.icon}
+          alt=""
+          className="absolute right-[18px] top-[18px] h-[20px] w-[20px] object-contain"
+        />
+      )}
+
+      <div className="flex h-[108px] items-center justify-center">
+        <img
+          src={item.image}
+          alt={item.title}
+          className="max-h-[92px] max-w-[150px] object-contain"
+        />
+      </div>
+
+      <p className="mt-[12px] text-left text-[13px] font-semibold leading-[1.35] text-[#222]">
+        {item.title}
+      </p>
+    </div>
+  );
+}
+
 function CompareRowLabel({ children }) {
   return (
     <div className="whitespace-pre-line px-5 py-6 text-center text-[15px] font-bold leading-[1.45] text-[#222]">
@@ -138,7 +202,7 @@ function CompareRowValue({ children }) {
 
 export default function App() {
   return (
-    <div className="min-h-screen  text-[#111] bg-[#f3f3f3]">
+    <div className="min-h-screen text-[#111] bg-[#f3f3f3]">
       <div className="mx-auto w-full max-w-[1280px]">
         <section className="grid grid-cols-[70px_520px_1fr] gap-0 px-[34px] pb-[26px] pt-[46px]">
           <div className="flex flex-col items-center pt-[8px]">
@@ -362,7 +426,7 @@ export default function App() {
           </div>
         </section>
 
-        <section className="mt-6 bg-[white] px-[18px] pb-8 pt-[18px] mb-[7.5rem]">
+        <section className="mt-6 bg-[white] px-[18px] pb-8 pt-[18px] mb-[24px]">
           <div className="grid grid-cols-[240px_1fr_1fr_1fr]">
             <div></div>
 
@@ -438,6 +502,18 @@ export default function App() {
                   {column.button}
                 </button>
               </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="bg-white px-[46px] pb-[120px] pt-[34px] mb-[125px]">
+          <h2 className="text-center text-[18px] font-bold uppercase tracking-[0.01em] text-black">
+            PASSENDES ZUBEHÖR
+          </h2>
+
+          <div className="mt-[34px] grid grid-cols-4 gap-[34px]">
+            {accessories.map((item) => (
+              <AccessoryCard key={item.title} item={item} />
             ))}
           </div>
         </section>
