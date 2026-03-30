@@ -154,7 +154,7 @@ function PdfCard({ label }) {
 
 function AccessoryCard({ item }) {
   return (
-    <div className="relative flex min-h-[210px] flex-col rounded-[14px] border border-[#efefef] bg-white px-[18px] pb-[16px] pt-[18px] cursor-pointer">
+    <div className="relative flex min-h-[210px] cursor-pointer flex-col rounded-[14px] border border-[#efefef] bg-white px-[18px] pb-[16px] pt-[18px]">
       {item.badge && (
         <div className="absolute left-[16px] top-[16px] flex h-[42px] w-[42px] items-center justify-center rounded-full bg-[#ff7a1a] text-[8px] font-bold uppercase text-white">
           % SALE
@@ -203,106 +203,110 @@ function CompareRowValue({ children }) {
 export default function App() {
   return (
     <div className="min-h-screen text-[#111] bg-[#f3f3f3]">
-      <div className="mx-auto w-full max-w-[1280px]">
-        <section className="grid grid-cols-[70px_520px_1fr] gap-0 px-[34px] pb-[26px] pt-[46px]">
-          <div className="flex flex-col items-center pt-[8px]">
-            <button type="button" className="text-[#b9b9b9]">
-              <ChevronUp size={16} strokeWidth={1.5} />
-            </button>
-
-            <div className="mt-[4px] flex h-[47px] w-[54px] items-center justify-center border border-[#bfc3c7] bg-[#f7f7f7] p-[4px]">
-              <img
-                src="https://shop.printequipment.de/media/2a/dc/2e/1755782017/dtf-xp-start-600-web-01.webp"
-                alt="Produkt Thumbnail"
-                className="max-h-full max-w-full object-contain"
-              />
-            </div>
-
-            <button type="button" className="mt-[4px] text-[#b9b9b9]">
-              <ChevronDown size={16} strokeWidth={1.5} />
-            </button>
-          </div>
-
-          <div className="flex flex-col items-center">
-            <div className="flex h-[405px] w-full items-center justify-center">
-              <img
-                src="https://shop.printequipment.de/media/2a/dc/2e/1755782017/dtf-xp-start-600-web-01.webp"
-                alt="DTF Drucksystem XP600-Pro"
-                className="ml-[-6px] mt-[8px] w-[470px] object-contain"
-              />
-            </div>
-
-            <div className="mt-[18px] flex items-center justify-center gap-[11px]">
-              <button type="button" className="text-[#d3d3d3]">
-                <ChevronLeft size={14} strokeWidth={1.5} />
+      <div className="w-full bg-white">
+        <div className="mx-auto w-full max-w-[1280px]">
+          <section className="grid grid-cols-[70px_520px_1fr] gap-0 px-[34px] pb-[26px] pt-[46px]">
+            <div className="flex flex-col items-center pt-[8px]">
+              <button type="button" className="text-[#b9b9b9]">
+                <ChevronUp size={16} strokeWidth={1.5} />
               </button>
 
-              {carouselDots.map((dot, index) => (
-                <span
-                  key={dot}
-                  className={`block h-[10px] w-[10px] rounded-full border border-[#707070] ${
-                    index === 0 ? "bg-black" : "bg-transparent"
-                  }`}
+              <div className="mt-[4px] flex h-[47px] w-[54px] items-center justify-center border border-[#bfc3c7] bg-[#f7f7f7] p-[4px]">
+                <img
+                  src="https://shop.printequipment.de/media/2a/dc/2e/1755782017/dtf-xp-start-600-web-01.webp"
+                  alt="Produkt Thumbnail"
+                  className="max-h-full max-w-full object-contain"
                 />
-              ))}
+              </div>
 
-              <button type="button" className="text-[#d3d3d3]">
-                <ChevronRight size={14} strokeWidth={1.5} />
-              </button>
-            </div>
-          </div>
-
-          <div className="pl-[48px] pt-[4px]">
-            <h1 className="max-w-[490px] text-[28px] font-bold leading-[1.12] text-black">
-              DTF Drucksystem XP600-Pro, Drucker und Fixiereinheit (600 mm)
-            </h1>
-
-            <p className="mt-[18px] text-[18px] leading-none text-[#555]">
-              Drucker und Fixiereinheit (600 mm)
-            </p>
-
-            <div className="mt-[34px] flex flex-col gap-[10px]">
-              <button
-                type="button"
-                className="flex h-[35px] w-[300px] items-center justify-center rounded-full bg-black text-[15px] font-bold uppercase leading-none text-white"
-              >
-                PREIS ANFRAGEN
-              </button>
-
-              <button
-                type="button"
-                className="flex h-[35px] w-[300px] items-center justify-center rounded-full bg-black text-[15px] font-bold uppercase leading-none text-white"
-              >
-                JETZT BERATUNG ANFORDERN
+              <button type="button" className="mt-[4px] text-[#b9b9b9]">
+                <ChevronDown size={16} strokeWidth={1.5} />
               </button>
             </div>
 
-            <div className="mt-[30px] text-[13px] leading-[1.38] text-[#222]">
-              <p className="text-[15px]">
-                <span className="font-bold uppercase">ART-NR:</span>{" "}
-                <span className="font-normal">DTF-XP-START-600</span>
+            <div className="flex flex-col items-center">
+              <div className="flex h-[405px] w-full items-center justify-center">
+                <img
+                  src="https://shop.printequipment.de/media/2a/dc/2e/1755782017/dtf-xp-start-600-web-01.webp"
+                  alt="DTF Drucksystem XP600-Pro"
+                  className="ml-[-6px] mt-[8px] w-[470px] object-contain"
+                />
+              </div>
+
+              <div className="mt-[18px] flex items-center justify-center gap-[11px]">
+                <button type="button" className="text-[#d3d3d3]">
+                  <ChevronLeft size={14} strokeWidth={1.5} />
+                </button>
+
+                {carouselDots.map((dot, index) => (
+                  <span
+                    key={dot}
+                    className={`block h-[10px] w-[10px] rounded-full border border-[#707070] ${
+                      index === 0 ? "bg-black" : "bg-transparent"
+                    }`}
+                  />
+                ))}
+
+                <button type="button" className="text-[#d3d3d3]">
+                  <ChevronRight size={14} strokeWidth={1.5} />
+                </button>
+              </div>
+            </div>
+
+            <div className="pl-[48px] pt-[4px]">
+              <h1 className="max-w-[490px] text-[28px] font-bold leading-[1.12] text-black">
+                DTF Drucksystem XP600-Pro, Drucker und Fixiereinheit (600 mm)
+              </h1>
+
+              <p className="mt-[18px] text-[18px] leading-none text-[#555]">
+                Drucker und Fixiereinheit (600 mm)
               </p>
 
-              <ul className="mt-[18px] space-y-[8px]">
-                {bullets.map((item) => (
-                  <li key={item} className="flex items-start gap-[6px]">
-                    <CircleCheck
-                      className="mt-[2px] shrink-0 text-black"
-                      size={15}
-                      fill="black"
-                      stroke="white"
-                      strokeWidth={2}
-                    />
-                    <span className="whitespace-nowrap text-[15px] leading-[1.15]">
-                      {item}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
+              <div className="mt-[34px] flex flex-col gap-[10px]">
+                <button
+                  type="button"
+                  className="flex h-[35px] w-[300px] items-center justify-center rounded-full bg-black text-[15px] font-bold uppercase leading-none text-white"
+                >
+                  PREIS ANFRAGEN
+                </button>
 
+                <button
+                  type="button"
+                  className="flex h-[35px] w-[300px] items-center justify-center rounded-full bg-black text-[15px] font-bold uppercase leading-none text-white"
+                >
+                  JETZT BERATUNG ANFORDERN
+                </button>
+              </div>
+
+              <div className="mt-[30px] text-[13px] leading-[1.38] text-[#222]">
+                <p className="text-[15px]">
+                  <span className="font-bold uppercase">ART-NR:</span>{" "}
+                  <span className="font-normal">DTF-XP-START-600</span>
+                </p>
+
+                <ul className="mt-[18px] space-y-[8px]">
+                  {bullets.map((item) => (
+                    <li key={item} className="flex items-start gap-[6px]">
+                      <CircleCheck
+                        className="mt-[2px] shrink-0 text-black"
+                        size={15}
+                        fill="black"
+                        stroke="white"
+                        strokeWidth={2}
+                      />
+                      <span className="whitespace-nowrap text-[15px] leading-[1.15]">
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div className="mx-auto w-full max-w-[1280px]">
         <section className="grid grid-cols-2 gap-4 border-t border-[#dfdfdf] px-[5px] pt-4">
           <div className="min-h-[400px] bg-[white] px-[20px] pb-8 pt-[22px]">
             <h2 className="text-[17px] font-bold uppercase tracking-[0.01em] text-black">
